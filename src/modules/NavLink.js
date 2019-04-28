@@ -8,7 +8,6 @@ import Link from '@material-ui/core/Link';
 const styles = theme => ({
     link: {
         margin: theme.spacing.unit,
-        textDecoration: `none !important`,
         fontSize: 16,
         fontWeight: 500,
         cursor: 'pointer',
@@ -24,7 +23,7 @@ const styles = theme => ({
 const dudUrl = 'javascript:;';
 
 const NavLink = ({ classes, url, text, ...props }) => (
-    <Link href={url || dudUrl} className={classes.link}>
+    <Link underline="none" href={url || dudUrl} className={classes.link}>
             {text ? text : props.render() }
     </Link>
 );

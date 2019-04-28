@@ -81,34 +81,34 @@ const rightSideNavLinks = [
     { text: 'Start free trial', component: 'button'}
 ];
 
-const resoureces = [
-'Help Center',
-'Support and product documentation',
-'API Reference',
-'Documentation guide for developers',
-'iOS App',
-'Mobile access to your workspaces',
-'Webinars & Training',
-'Get the most out of the platform',
-'Developer How-to',
-'Tutorials from software engineers',
-'The Clubhouse Blog',
-'Fix errors faster with the new Sentry Integration',
-'A developer\'s guide to hacking joy at your local hackerspace',
-];
+// const resoureces = [
+// 'Help Center',
+// 'Support and product documentation',
+// 'API Reference',
+// 'Documentation guide for developers',
+// 'iOS App',
+// 'Mobile access to your workspaces',
+// 'Webinars & Training',
+// 'Get the most out of the platform',
+// 'Developer How-to',
+// 'Tutorials from software engineers',
+// 'The Clubhouse Blog',
+// 'Fix errors faster with the new Sentry Integration',
+// 'A developer\'s guide to hacking joy at your local hackerspace',
+// ];
 
 
 function NavBar(props) {
     const { classes } = props;
     return (
         <div className={classes.root}>
-            <AppBar position="static" color="inherit" className={classes.appBar}>
+            <AppBar position="fixed" color="inherit" className={classes.appBar} elevation={0}>
                 <Toolbar className={classes.grow}>
                     <Grid container spacing={24} className={classes.gridContainer}>
                         <Grid item md={2}>
                             <IconButton className={classes.brand} color="primary" aria-label="Menu">
                                 Clubhouse
-                                <img src="/images/clubhouse_icon.png" alt="logo" className={classes.logoIcon} />
+                                <img src="/icons/clubhouse_icon.png" alt="logo" className={classes.logoIcon} />
                             </IconButton>
                         </Grid>
                         <Grid item md={7}>
@@ -123,7 +123,8 @@ function NavBar(props) {
                                         (<NavLink key={item.text}
                                             render={() => (<Fab className={classes.fabBtn} variant="extended" color="primary" aria-label="Start Trial">
                                                 {item.text}
-                                            </Fab>)} />) :
+                                            </Fab>)}
+                                        />) :
                                         (<NavLink key={item} text={item} />)
                                 )}
                             </Typography>
